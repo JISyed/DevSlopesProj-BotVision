@@ -5,4 +5,6 @@ The machine learning model used is from SqueezeNet. For better accuracy, using a
 
 This app uses the devices (back) camera, so this app cannot run in the Simulator; it can only run on a physical device. Because CoreML was introduced in iOS 11, you need that OS on your iDevice before testing.
 
+The app also features voice synthesis (it will tell you what objects its looking at when you tap the screen).
+
 <img src="screenshot.jpeg" alt="Camera Screen" width="500"/>
