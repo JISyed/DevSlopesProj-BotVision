@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Camera View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CameraViewController" customModule="Bot_Vision" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJc-T1-eXB" userLabel="ViewCamera">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHI-NX-C3L" customClass="RoundedShadowButton" customModule="Bot_Vision" customModuleProvider="target">
+                                <rect key="frame" x="20" y="611" width="100" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="4Hk-d8-fLX"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="eBa-Dz-oVc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                <state key="normal" title="FLASH OFF">
+                                    <color key="titleColor" red="0.84705882352941175" green="0.27843137254901962" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFlashBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3q6-fB-Ff6"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xFu-qP-Ti5" customClass="RoundedShadowImageView" customModule="Bot_Vision" customModuleProvider="target">
+                                <rect key="frame" x="285" y="577" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="SSS-iI-VfL"/>
+                                    <constraint firstAttribute="width" constant="70" id="ldh-CM-Hid"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aI-4g-oVZ" userLabel="ViewItemInfo" customClass="RoundedShadowView" customModule="Bot_Vision" customModuleProvider="target">
+                                <rect key="frame" x="20" y="50" width="335" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Sb-pd-EY2">
+                                        <rect key="frame" x="16" y="8" width="303" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="The names of items captures will appear here." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lqw-be-bPO">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="30"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                                <color key="textColor" red="0.84705882349999995" green="0.2784313725" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONFIDENCE: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhO-2a-48j">
+                                                <rect key="frame" x="0.0" y="30" width="303" height="14"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0Sb-pd-EY2" secondAttribute="trailing" constant="16" id="8Gh-cV-cgg"/>
+                                    <constraint firstAttribute="height" constant="60" id="TVc-19-5Xd"/>
+                                    <constraint firstItem="0Sb-pd-EY2" firstAttribute="leading" secondItem="7aI-4g-oVZ" secondAttribute="leading" constant="16" id="XJp-jO-jtu"/>
+                                    <constraint firstItem="0Sb-pd-EY2" firstAttribute="top" secondItem="7aI-4g-oVZ" secondAttribute="top" constant="8" id="gC8-Nq-iQW"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Sb-pd-EY2" secondAttribute="bottom" constant="8" id="zk1-En-1Xo"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aKg-MW-3ft">
+                                <rect key="frame" x="310" y="602" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VJc-T1-eXB" secondAttribute="trailing" id="1K5-pZ-Z2S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xFu-qP-Ti5" secondAttribute="trailing" constant="20" id="51G-Uh-Plw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FHI-NX-C3L" secondAttribute="bottom" constant="20" id="AAG-FK-Aie"/>
+                            <constraint firstItem="7aI-4g-oVZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Gxk-Td-B5P"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FHI-NX-C3L" secondAttribute="trailing" constant="20" symbolic="YES" id="JTm-8U-SZL"/>
+                            <constraint firstItem="aKg-MW-3ft" firstAttribute="centerY" secondItem="xFu-qP-Ti5" secondAttribute="centerY" id="LSn-Kp-k46"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xFu-qP-Ti5" secondAttribute="bottom" constant="20" id="Nkq-0f-Hms"/>
+                            <constraint firstItem="7aI-4g-oVZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="QwJ-8a-ptw"/>
+                            <constraint firstItem="aKg-MW-3ft" firstAttribute="centerX" secondItem="xFu-qP-Ti5" secondAttribute="centerX" id="TUU-X9-0dt"/>
+                            <constraint firstItem="VJc-T1-eXB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kcB-p4-13b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7aI-4g-oVZ" secondAttribute="trailing" constant="20" id="laT-VN-Dm4"/>
+                            <constraint firstItem="VJc-T1-eXB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nsQ-f2-h1W"/>
+                            <constraint firstAttribute="bottom" secondItem="VJc-T1-eXB" secondAttribute="bottom" id="uh0-P4-bKM"/>
+                            <constraint firstItem="FHI-NX-C3L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zww-Vf-3Dy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnFlash" destination="FHI-NX-C3L" id="2jt-Jd-k34"/>
+                        <outlet property="heightCapturedImage" destination="SSS-iI-VfL" id="nx6-Zy-gL4"/>
+                        <outlet property="imgCapturedImage" destination="xFu-qP-Ti5" id="SfR-79-rIF"/>
+                        <outlet property="lblConfidence" destination="FhO-2a-48j" id="nyF-ZC-Jic"/>
+                        <outlet property="lblIdentification" destination="lqw-be-bPO" id="RDf-D0-A9c"/>
+                        <outlet property="spinnerThumbnail" destination="aKg-MW-3ft" id="sUk-zl-ICn"/>
+                        <outlet property="viewCamera" destination="VJc-T1-eXB" id="pjP-ta-BIJ"/>
+                        <outlet property="viewItemInfo" destination="7aI-4g-oVZ" id="7s9-rd-P6z"/>
+                        <outlet property="widthCapturedImage" destination="ldh-CM-Hid" id="vFL-QO-7vr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="33.251231527093594"/>
+        </scene>
+    </scenes>
+</document>
